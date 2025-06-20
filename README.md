@@ -1,295 +1,593 @@
-# Telegram AI Image Generation Bot
+# 🎨 AI Image Generator Telegram Bot
 
-A sophisticated Telegram bot that generates high-quality images from text descriptions using state-of-the-art AI models. The bot leverages multiple Hugging Face models including FLUX, Stable Diffusion, and specialized prompt enhancement systems to create stunning visual content.
+<div align="center">
 
-## Repository Information
+![Bot Demo](https://img.shields.io/badge/AI-Image%20Generator-blueviolet?style=for-the-badge&logo=telegram&logoColor=white)
+![Python Version](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-**GitHub Repository:** https://github.com/Omega-Open-AI/telegram-draft-bot.git
+**Transform your ideas into stunning visuals with the power of AI**
 
-**Current Version:** 1.0.0
+*Generate high-quality images from text descriptions using state-of-the-art AI models*
 
-**License:** MIT
+[🚀 **Deploy Now**](#-quick-deployment) • [📖 **Documentation**](#-features) • [💡 **Examples**](#-usage-examples) • [🛠️ **Setup**](#️-local-development)
 
-## Features and Capabilities
+</div>
 
-The bot provides comprehensive image generation capabilities with intelligent model selection, prompt enhancement, image analysis, and user preference management. Users can generate images through simple text commands, enhance their prompts using AI assistance, analyze uploaded images for detailed descriptions, and customize their preferred generation models.
+---
 
-The system includes robust rate limiting to ensure fair usage, automatic model optimization based on prompt characteristics, image processing and optimization for Telegram delivery, and comprehensive error handling with detailed logging. Redis-based caching provides efficient user preference storage and rate limiting functionality.
+## ✨ Features
 
-## Supported AI Models
+### 🎯 **Core Capabilities**
+- **🖼️ Text-to-Image Generation** - Create stunning images from descriptive text
+- **🔍 Image Analysis** - Upload images for detailed AI-powered descriptions
+- **🎨 Multiple AI Models** - Choose from premium Flux, Stable Diffusion, and specialized models
+- **⚡ Smart Model Selection** - Automatic optimization based on prompt characteristics
+- **🔧 Prompt Enhancement** - AI-powered prompt improvement for better results
 
-### Text-to-Image Generation Models
+### 🛡️ **Advanced Features**
+- **⏱️ Rate Limiting** - Fair usage with 10 images per hour per user
+- **🎛️ User Preferences** - Save favorite models and settings
+- **📊 Quality Control** - Automatic image optimization for Telegram
+- **🔒 Content Safety** - Built-in content filtering and moderation
+- **📱 Mobile Optimized** - Perfect experience on all devices
 
-The bot supports multiple premium and free models for different use cases. FLUX.1-pro delivers premium quality image generation with superior detail and accuracy, while FLUX.1-dev provides development-grade features with high quality output. FLUX.1-schnell offers fast generation with excellent quality balance, and FLUX.1-schnell-Free provides free tier access with good quality results.
+### 🤖 **Available AI Models**
 
-Additional models include Kwai-Kolors for advanced artistic rendering with vibrant color reproduction, Stable Diffusion 3.5 for latest text understanding capabilities, classic Stable Diffusion v1.5 for reliable fast generation, and SDXL for high-resolution detailed image output.
+#### 🎨 **Image Generation Models**
+| Model | Category | Speed | Quality | Description |
+|-------|----------|-------|---------|-------------|
+| **Flux Pro** | Premium | Slow | Highest | Professional-grade with superior detail |
+| **Flux1.[dev]** | Advanced | Medium | Very High | Cutting-edge features and quality |
+| **Flux1.[schnell]** | Balanced | Fast | High | Perfect speed-quality balance |
+| **Flux1.[schnell] Free** | Free | Fast | Good | Free tier with excellent results |
+| **Kolor** | Artistic | Medium | High | Vibrant colors and artistic flair |
+| **SD 3.5** | Latest | Medium | Very High | Latest Stable Diffusion technology |
+| **SDXL** | High-Res | Slow | Very High | Extra-large for detailed images |
 
-### Text Processing and Enhancement
+#### 🔍 **Analysis Models**
+- **Image-to-Text** - Advanced image captioning and analysis
+- **Prompt Enhancement** - AI-powered prompt optimization
 
-The system incorporates specialized text processing models for prompt optimization. The Flux Prompt Enhancer optimizes prompts specifically for better image generation results, while the Text-to-Image Prompt Generator creates detailed prompts from simple descriptions.
+---
 
-### Image Analysis Capabilities
+## 🚀 Quick Deployment
 
-Advanced image analysis functionality enables users to upload images for detailed description generation. The BLIP Image Captioning model provides comprehensive image analysis and description generation, supporting reverse engineering of prompts from existing images.
+### 🌟 **One-Click Deploy on Railway** *(Recommended)*
 
-## Prerequisites and Dependencies
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
 
-### System Requirements
+### 🔧 **Manual Deployment**
 
-The bot requires Python 3.8 or higher for optimal compatibility with all dependencies. Redis server installation is necessary for caching and rate limiting functionality. Sufficient system memory is recommended, with at least 1GB RAM for stable operation under moderate load.
+<details>
+<summary><b>📋 Railway Deployment Guide</b></summary>
 
-### API Credentials Required
+1. **Fork this repository** to your GitHub account
+2. **Sign up** at [Railway](https://railway.app) with GitHub
+3. **Create new project** → Deploy from GitHub repo
+4. **Add Redis database** to your project
+5. **Set environment variables**:
+   ```env
+   TELEGRAM_BOT_TOKEN=your_bot_token_here
+   HUGGINGFACE_API_KEY=your_hf_api_key_here
+   REDIS_URL=your_redis_connection_string
+   ```
+6. **Deploy automatically** on every Git push!
 
-Users must obtain a Telegram Bot Token from BotFather on Telegram and a Hugging Face API key with read permissions for model access. Optional Sentry DSN can be configured for enhanced error monitoring and debugging capabilities.
+</details>
 
-## Installation Instructions
+<details>
+<summary><b>🌐 Render Deployment Guide</b></summary>
 
-### Local Development Setup
+1. **Fork repository** and connect to [Render](https://render.com)
+2. **Create Web Service** with these settings:
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python telegram_bot_complete.py`
+3. **Add Redis service** from Render dashboard
+4. **Configure environment variables** in service settings
+5. **Auto-deploy** from GitHub on every commit
 
-Begin by cloning the repository to your local development environment:
+</details>
+
+<details>
+<summary><b>☁️ Other Free Platforms</b></summary>
+
+- **Heroku Alternative**: Use [fly.io](https://fly.io) with their free tier
+- **Google Cloud**: Deploy on Cloud Run with always-free tier
+- **Oracle Cloud**: Use ARM instances with generous free resources
+- **Self-hosted**: Deploy on any VPS with Docker support
+
+</details>
+
+---
+
+## 🛠️ Local Development
+
+### 📋 **Prerequisites**
+
+- **Python 3.8+** - [Download Python](https://python.org/downloads/)
+- **Redis Server** - [Install Redis](https://redis.io/download)
+- **Telegram Bot Token** - Create bot via [@BotFather](https://t.me/botfather)
+- **Hugging Face API Key** - Get free key at [HuggingFace](https://huggingface.co)
+
+### ⚡ **Quick Start**
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/Omega-Open-AI/telegram-draft-bot.git
 cd telegram-draft-bot
-```
 
-Create and activate a Python virtual environment to isolate dependencies:
+# 2. Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-```bash
-python -m venv telegram_bot_env
-```
-
-Activate the virtual environment using the appropriate command for your operating system:
-
-**Windows:**
-```cmd
-telegram_bot_env\Scripts\activate
-```
-
-**Linux/macOS:**
-```bash
-source telegram_bot_env/bin/activate
-```
-
-Install all required dependencies from the requirements file:
-
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
-```
 
-### Windows-Specific Installation
+# 4. Set environment variables
+cp .env.example .env  # Copy and edit with your credentials
 
-Windows users should ensure Python 3.8+ is properly installed and added to the system PATH. Download Python from the official website and select the option to add Python to PATH during installation. Windows Subsystem for Linux (WSL) provides an alternative environment that may offer better compatibility with certain dependencies.
-
-For Redis installation on Windows, download Redis for Windows from the Microsoft Archive or use the Windows Subsystem for Linux. Alternatively, Docker Desktop can provide Redis through containerization:
-
-```cmd
-docker run -d -p 6379:6379 redis:alpine
-```
-
-Configure environment variables through System Properties > Advanced > Environment Variables, or create a .env file in the project directory containing the required configuration values.
-
-### Termux Android Installation
-
-Termux provides a Linux environment on Android devices, enabling bot deployment directly on mobile hardware. Begin by installing Termux from F-Droid or Google Play Store, then update the package repository:
-
-```bash
-pkg update && pkg upgrade
-```
-
-Install Python and required system packages:
-
-```bash
-pkg install python git redis
-```
-
-Install build tools and dependencies required for Python package compilation:
-
-```bash
-pkg install clang make libjpeg-turbo-dev zlib-dev
-```
-
-Clone the repository and navigate to the project directory:
-
-```bash
-git clone https://github.com/Omega-Open-AI/telegram-draft-bot.git
-cd telegram-draft-bot
-```
-
-Install Python dependencies with specific flags for Termux compatibility:
-
-```bash
-pip install -r requirements.txt --no-build-isolation
-```
-
-Start Redis server in a separate terminal session:
-
-```bash
+# 5. Start Redis server
 redis-server
-```
 
-## Configuration Setup
-
-### Environment Variables Configuration
-
-Create a `.env` file in the project root directory with the following configuration:
-
-```
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
-HUGGINGFACE_API_KEY=your_huggingface_api_key_here
-REDIS_URL=redis://localhost:6379
-ENVIRONMENT=development
-```
-
-### Obtaining Required Credentials
-
-**Telegram Bot Token:** Open Telegram and search for @BotFather. Send the command `/newbot` and follow the prompts to create your bot. BotFather will provide a unique token that must be kept secure and used in your configuration.
-
-**Hugging Face API Key:** Register an account at huggingface.co and navigate to your profile settings. Generate an API token with read permissions, which will enable access to the AI models used by the bot.
-
-### Redis Configuration
-
-Start Redis server before running the bot. The default configuration connects to localhost on port 6379. For production deployments, configure Redis with appropriate security settings and persistent storage:
-
-```bash
-redis-server --appendonly yes --requirepass your_secure_password
-```
-
-## Running the Bot
-
-### Local Development Execution
-
-Ensure Redis server is running and environment variables are properly configured. Start the bot using the following command:
-
-```bash
+# 6. Run the bot
 python telegram_bot_complete.py
 ```
 
-The bot will begin polling for messages and display startup information in the console. Monitor the logs for successful initialization and any potential configuration issues.
+### 🔧 **Environment Setup**
 
-### Production Deployment Considerations
+Create a `.env` file in the project root:
 
-For production environments, implement proper logging configuration, error monitoring integration, and automated restart capabilities. Consider using process managers such as PM2 or systemd for service management:
+```env
+# Telegram Bot Configuration
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
 
-```bash
-# Using PM2
-pm2 start telegram_bot_complete.py --name telegram-image-bot --interpreter python3
+# Hugging Face API Configuration
+HUGGINGFACE_API_KEY=your_huggingface_api_key_here
 
-# Using systemd (create service file)
-sudo systemctl start telegram-image-bot
-sudo systemctl enable telegram-image-bot
+# Redis Configuration
+REDIS_URL=redis://localhost:6379
+
+# Optional: Bot Configuration
+MAX_PROMPT_LENGTH=500
+RATE_LIMIT_PER_USER=10
+DEFAULT_MODEL=black-forest-labs/FLUX.1-schnell-Free
 ```
 
-## Cloud Hosting Deployment
+---
 
-### Railway Platform Deployment
+## 📱 Usage Examples
 
-Railway provides seamless deployment with integrated Redis support and automatic scaling capabilities. Connect your GitHub repository to Railway and configure the following environment variables in the Railway dashboard:
+### 💬 **Basic Commands**
 
-- TELEGRAM_BOT_TOKEN
-- HUGGINGFACE_API_KEY  
-- REDIS_URL (automatically provided by Railway Redis service)
+```
+/start          - Welcome message and quick start guide
+/help           - Detailed usage instructions and tips
+/models         - View all available AI models
+/generate       - Generate image from prompt
+/setmodel       - Set your preferred AI model
+/enhance        - Enhance prompts with AI
+```
 
-The platform automatically detects Python applications and installs dependencies from requirements.txt. Deployment occurs automatically upon code commits to the connected repository.
+### 🎨 **Example Prompts**
 
-### Render Platform Deployment
+```
+🌅 "A serene mountain landscape at sunset with crystal clear lake"
+🏰 "Medieval castle on a floating island, fantasy art style"
+🤖 "Futuristic robot in cyberpunk city, neon lights, 8k quality"
+🎭 "Portrait of wise wizard with glowing staff, digital art"
+🚗 "Vintage car driving through autumn forest, cinematic"
+```
 
-Render offers robust free tier hosting with automatic SSL certificates and deployment automation. Create a new Web Service in the Render dashboard and connect your GitHub repository. Configure build and start commands in the service settings:
+### 📊 **Advanced Usage**
 
-**Build Command:** `pip install -r requirements.txt`
-**Start Command:** `python telegram_bot_complete.py`
+**Model Selection:**
+```
+/setmodel flux_pro        # Set premium model for best quality
+/setmodel flux_free       # Set free model for faster generation
+```
 
-Add a separate Redis service within your Render account and configure the connection URL in your web service environment variables.
+**Prompt Enhancement:**
+```
+/enhance sunset over ocean
+# AI will enhance: "Breathtaking sunset over calm ocean waves, 
+# golden hour lighting, professional photography, 8k resolution"
+```
 
-### Alternative Cloud Providers
+**Image Analysis:**
+- Simply upload any image to get detailed AI description
+- Use descriptions as prompts for similar image generation
 
-Google Cloud Platform App Engine provides serverless deployment with automatic scaling and integrated logging. Configure deployment using the app.yaml file for GAE standard environment.
+---
 
-Heroku offers straightforward deployment through Git integration, though the free tier has been discontinued. Consider Heroku alternatives such as Fly.io or DigitalOcean App Platform for similar deployment experiences.
+## 🏗️ Architecture & Technical Details
 
-## Bot Usage and Commands
+### 📊 **System Architecture**
 
-### Available Commands
+```mermaid
+graph TD
+    A[Telegram User] --> B[Telegram Bot API]
+    B --> C[Python Bot Application]
+    C --> D[Redis Cache]
+    C --> E[Hugging Face API]
+    E --> F[AI Models]
+    F --> G[Generated Images]
+    G --> C
+    C --> B
+    B --> A
+```
 
-The bot responds to several commands that provide different functionality:
+### 🔧 **Key Components**
 
-`/start` - Display welcome message and quick start guide
-`/help` - Show detailed usage instructions and prompt writing tips
-`/generate <prompt>` - Generate image from specified text description
-`/models` - List all available AI models with descriptions and capabilities
-`/setmodel <model_name>` - Configure preferred model for image generation
-`/enhance <prompt>` - Improve prompt using AI enhancement algorithms
+- **`telegram_bot_complete.py`** - Main bot application with all handlers
+- **`requirements.txt`** - Python dependencies with version pinning
+- **Redis Integration** - Rate limiting, user preferences, caching
+- **Image Processing** - PIL-based optimization for Telegram delivery
+- **Error Handling** - Comprehensive error management and user feedback
 
-### Text Message Handling
+### 📈 **Performance Features**
 
-Send any text message to the bot to generate an image using the content as a prompt. The bot automatically selects the optimal model based on prompt characteristics and user preferences. Enhanced prompts are generated automatically to improve output quality.
+- **Smart Caching** - Redis-based caching for improved response times
+- **Rate Limiting** - User-based limits to ensure fair usage
+- **Image Optimization** - Automatic compression and format conversion
+- **Async Operations** - Non-blocking API calls for better performance
+- **Retry Logic** - Automatic retry for failed API requests
 
-### Image Analysis Feature
+---
 
-Upload any image to the bot to receive detailed analysis and description. The generated description can serve as a prompt for creating similar images, enabling reverse engineering of visual concepts.
+## 🤝 Contributing
 
-## Rate Limiting and Usage Policies
+We welcome contributions! Here's how you can help:
 
-The bot implements rate limiting to ensure fair usage across all users. Each user can generate up to 10 images per hour, with the limit resetting automatically. Rate limiting information is stored in Redis with automatic expiration.
+### 🔄 **How to Contribute**
 
-Prompts are automatically sanitized to prevent generation of inappropriate content. The system blocks requests containing harmful keywords and maintains content policy compliance.
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-## Troubleshooting and Support
+### 🐛 **Bug Reports**
 
-### Common Issues and Solutions
+Found a bug? Please create an issue with:
+- **Description** of the problem
+- **Steps to reproduce**
+- **Expected behavior**
+- **Screenshots** (if applicable)
+- **Environment details**
 
-**ModuleNotFoundError:** Ensure all dependencies are installed correctly using `pip install -r requirements.txt`. Verify that the virtual environment is activated before installation.
+### 💡 **Feature Requests**
 
-**Redis Connection Errors:** Confirm Redis server is running and accessible at the configured URL. Check firewall settings and network connectivity for remote Redis instances.
+Have an idea? We'd love to hear it! Open an issue with:
+- **Feature description**
+- **Use case/motivation**
+- **Proposed implementation** (optional)
 
-**API Authentication Failures:** Verify that environment variables are properly set and API credentials are valid. Test credentials independently before running the bot.
+---
 
-**Image Generation Timeouts:** Hugging Face models may require loading time on first use. The bot automatically retries after model loading completion. Monitor API status for service availability.
+## 📄 License & Credits
 
-### Logging and Monitoring
+### 📜 **License**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The bot provides comprehensive logging for debugging and monitoring purposes. Log levels can be adjusted in the configuration for development versus production environments. Integration with Sentry provides real-time error monitoring and performance tracking.
+### 🙏 **Acknowledgments**
+- **Hugging Face** - For providing excellent AI model APIs
+- **Telegram** - For the robust Bot API platform
+- **Black Forest Labs** - For the amazing Flux AI models
+- **Stability AI** - For Stable Diffusion models
+- **Open Source Community** - For the incredible libraries used
 
-### Performance Optimization
+### 🌟 **Show Your Support**
 
-For high-traffic deployments, consider implementing connection pooling for Redis and HTTP clients. Monitor memory usage during image processing operations and implement appropriate garbage collection strategies.
+If you find this project helpful, please consider:
+- ⭐ **Starring** the repository
+- 🍴 **Forking** for your own projects
+- 📢 **Sharing** with others
+- 💖 **Contributing** to make it better
 
-## Contributing and Development
+---
 
-### Code Standards and Guidelines
+<div align="center">
 
-The project follows Python PEP 8 style guidelines with Black code formatting. Type hints are used throughout the codebase for improved maintainability and IDE support. Comprehensive error handling ensures graceful degradation under various failure scenarios.
+**Made with ❤️ by [Omega Open AI](https://github.com/Omega-Open-AI)**
 
-### Testing Framework
+[🏠 Home](https://github.com/Omega-Open-AI) • [📧 Contact](mailto:contact@omega-openai.com) • [🐦 Twitter](https://twitter.com/omega_openai) • [💼 LinkedIn](https://linkedin.com/company/omega-openai)
 
-The project includes pytest configuration for unit and integration testing. Test coverage focuses on core functionality including image generation, command handling, and error scenarios.
+</div># 🎨 AI Image Generator Telegram Bot
 
-### Development Workflow
+<div align="center">
 
-Fork the repository and create feature branches for new functionality. Submit pull requests with detailed descriptions of changes and appropriate test coverage. Code review process ensures quality and consistency across contributions.
+![Bot Demo](https://img.shields.io/badge/AI-Image%20Generator-blueviolet?style=for-the-badge&logo=telegram&logoColor=white)
+![Python Version](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-## Security Considerations
+**Transform your ideas into stunning visuals with the power of AI**
 
-### API Key Management
+*Generate high-quality images from text descriptions using state-of-the-art AI models*
 
-Store API keys and sensitive credentials as environment variables rather than hardcoding in source files. Use platform-specific secret management services for production deployments. Implement key rotation procedures for enhanced security.
+[🚀 **Deploy Now**](#-quick-deployment) • [📖 **Documentation**](#-features) • [💡 **Examples**](#-usage-examples) • [🛠️ **Setup**](#️-local-development)
 
-### Content Filtering
+</div>
 
-The bot includes automatic content filtering to prevent generation of inappropriate images. Harmful keywords are blocked at the prompt sanitization stage. Additional filtering can be implemented based on specific requirements.
+---
 
-### User Privacy
+## ✨ Features
 
-User interactions are logged for debugging purposes but personal information is not permanently stored. Rate limiting data expires automatically and user preferences can be cleared upon request.
+### 🎯 **Core Capabilities**
+- **🖼️ Text-to-Image Generation** - Create stunning images from descriptive text
+- **🔍 Image Analysis** - Upload images for detailed AI-powered descriptions
+- **🎨 Multiple AI Models** - Choose from premium Flux, Stable Diffusion, and specialized models
+- **⚡ Smart Model Selection** - Automatic optimization based on prompt characteristics
+- **🔧 Prompt Enhancement** - AI-powered prompt improvement for better results
 
-## License and Legal Information
+### 🛡️ **Advanced Features**
+- **⏱️ Rate Limiting** - Fair usage with 10 images per hour per user
+- **🎛️ User Preferences** - Save favorite models and settings
+- **📊 Quality Control** - Automatic image optimization for Telegram
+- **🔒 Content Safety** - Built-in content filtering and moderation
+- **📱 Mobile Optimized** - Perfect experience on all devices
 
-This project is released under the MIT License, permitting commercial and personal use with attribution. Users remain responsible for compliance with Telegram Terms of Service and Hugging Face API usage policies.
+### 🤖 **Available AI Models**
 
-The bot leverages third-party AI models subject to their respective licensing terms. Users should review model-specific usage rights and restrictions before commercial deployment.
+#### 🎨 **Image Generation Models**
+| Model | Category | Speed | Quality | Description |
+|-------|----------|-------|---------|-------------|
+| **Flux Pro** | Premium | Slow | Highest | Professional-grade with superior detail |
+| **Flux1.[dev]** | Advanced | Medium | Very High | Cutting-edge features and quality |
+| **Flux1.[schnell]** | Balanced | Fast | High | Perfect speed-quality balance |
+| **Flux1.[schnell] Free** | Free | Fast | Good | Free tier with excellent results |
+| **Kolor** | Artistic | Medium | High | Vibrant colors and artistic flair |
+| **SD 3.5** | Latest | Medium | Very High | Latest Stable Diffusion technology |
+| **SDXL** | High-Res | Slow | Very High | Extra-large for detailed images |
 
-## Support and Contact Information
+#### 🔍 **Analysis Models**
+- **Image-to-Text** - Advanced image captioning and analysis
+- **Prompt Enhancement** - AI-powered prompt optimization
 
-For technical support and bug reports, create issues in the GitHub repository with detailed descriptions and reproduction steps. Feature requests and enhancement suggestions are welcome through the repository issue system.
+---
 
-Community discussions and usage questions can be addressed through GitHub Discussions or relevant Telegram development groups.
+## 🚀 Quick Deployment
+
+### 🌟 **One-Click Deploy on Railway** *(Recommended)*
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
+
+### 🔧 **Manual Deployment**
+
+<details>
+<summary><b>📋 Railway Deployment Guide</b></summary>
+
+1. **Fork this repository** to your GitHub account
+2. **Sign up** at [Railway](https://railway.app) with GitHub
+3. **Create new project** → Deploy from GitHub repo
+4. **Add Redis database** to your project
+5. **Set environment variables**:
+   ```env
+   TELEGRAM_BOT_TOKEN=your_bot_token_here
+   HUGGINGFACE_API_KEY=your_hf_api_key_here
+   REDIS_URL=your_redis_connection_string
+   ```
+6. **Deploy automatically** on every Git push!
+
+</details>
+
+<details>
+<summary><b>🌐 Render Deployment Guide</b></summary>
+
+1. **Fork repository** and connect to [Render](https://render.com)
+2. **Create Web Service** with these settings:
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python telegram_bot_complete.py`
+3. **Add Redis service** from Render dashboard
+4. **Configure environment variables** in service settings
+5. **Auto-deploy** from GitHub on every commit
+
+</details>
+
+<details>
+<summary><b>☁️ Other Free Platforms</b></summary>
+
+- **Heroku Alternative**: Use [fly.io](https://fly.io) with their free tier
+- **Google Cloud**: Deploy on Cloud Run with always-free tier
+- **Oracle Cloud**: Use ARM instances with generous free resources
+- **Self-hosted**: Deploy on any VPS with Docker support
+
+</details>
+
+---
+
+## 🛠️ Local Development
+
+### 📋 **Prerequisites**
+
+- **Python 3.8+** - [Download Python](https://python.org/downloads/)
+- **Redis Server** - [Install Redis](https://redis.io/download)
+- **Telegram Bot Token** - Create bot via [@BotFather](https://t.me/botfather)
+- **Hugging Face API Key** - Get free key at [HuggingFace](https://huggingface.co)
+
+### ⚡ **Quick Start**
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Omega-Open-AI/telegram-draft-bot.git
+cd telegram-draft-bot
+
+# 2. Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Set environment variables
+cp .env.example .env  # Copy and edit with your credentials
+
+# 5. Start Redis server
+redis-server
+
+# 6. Run the bot
+python telegram_bot_complete.py
+```
+
+### 🔧 **Environment Setup**
+
+Create a `.env` file in the project root:
+
+```env
+# Telegram Bot Configuration
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+
+# Hugging Face API Configuration
+HUGGINGFACE_API_KEY=your_huggingface_api_key_here
+
+# Redis Configuration
+REDIS_URL=redis://localhost:6379
+
+# Optional: Bot Configuration
+MAX_PROMPT_LENGTH=500
+RATE_LIMIT_PER_USER=10
+DEFAULT_MODEL=black-forest-labs/FLUX.1-schnell-Free
+```
+
+---
+
+## 📱 Usage Examples
+
+### 💬 **Basic Commands**
+
+```
+/start          - Welcome message and quick start guide
+/help           - Detailed usage instructions and tips
+/models         - View all available AI models
+/generate       - Generate image from prompt
+/setmodel       - Set your preferred AI model
+/enhance        - Enhance prompts with AI
+```
+
+### 🎨 **Example Prompts**
+
+```
+🌅 "A serene mountain landscape at sunset with crystal clear lake"
+🏰 "Medieval castle on a floating island, fantasy art style"
+🤖 "Futuristic robot in cyberpunk city, neon lights, 8k quality"
+🎭 "Portrait of wise wizard with glowing staff, digital art"
+🚗 "Vintage car driving through autumn forest, cinematic"
+```
+
+### 📊 **Advanced Usage**
+
+**Model Selection:**
+```
+/setmodel flux_pro        # Set premium model for best quality
+/setmodel flux_free       # Set free model for faster generation
+```
+
+**Prompt Enhancement:**
+```
+/enhance sunset over ocean
+# AI will enhance: "Breathtaking sunset over calm ocean waves, 
+# golden hour lighting, professional photography, 8k resolution"
+```
+
+**Image Analysis:**
+- Simply upload any image to get detailed AI description
+- Use descriptions as prompts for similar image generation
+
+---
+
+## 🏗️ Architecture & Technical Details
+
+### 📊 **System Architecture**
+
+```mermaid
+graph TD
+    A[Telegram User] --> B[Telegram Bot API]
+    B --> C[Python Bot Application]
+    C --> D[Redis Cache]
+    C --> E[Hugging Face API]
+    E --> F[AI Models]
+    F --> G[Generated Images]
+    G --> C
+    C --> B
+    B --> A
+```
+
+### 🔧 **Key Components**
+
+- **`telegram_bot_complete.py`** - Main bot application with all handlers
+- **`requirements.txt`** - Python dependencies with version pinning
+- **Redis Integration** - Rate limiting, user preferences, caching
+- **Image Processing** - PIL-based optimization for Telegram delivery
+- **Error Handling** - Comprehensive error management and user feedback
+
+### 📈 **Performance Features**
+
+- **Smart Caching** - Redis-based caching for improved response times
+- **Rate Limiting** - User-based limits to ensure fair usage
+- **Image Optimization** - Automatic compression and format conversion
+- **Async Operations** - Non-blocking API calls for better performance
+- **Retry Logic** - Automatic retry for failed API requests
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### 🔄 **How to Contribute**
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### 🐛 **Bug Reports**
+
+Found a bug? Please create an issue with:
+- **Description** of the problem
+- **Steps to reproduce**
+- **Expected behavior**
+- **Screenshots** (if applicable)
+- **Environment details**
+
+### 💡 **Feature Requests**
+
+Have an idea? We'd love to hear it! Open an issue with:
+- **Feature description**
+- **Use case/motivation**
+- **Proposed implementation** (optional)
+
+---
+
+## 📄 License & Credits
+
+### 📜 **License**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### 🙏 **Acknowledgments**
+- **Hugging Face** - For providing excellent AI model APIs
+- **Telegram** - For the robust Bot API platform
+- **Black Forest Labs** - For the amazing Flux AI models
+- **Stability AI** - For Stable Diffusion models
+- **Open Source Community** - For the incredible libraries used
+
+### 🌟 **Show Your Support**
+
+If you find this project helpful, please consider:
+- ⭐ **Starring** the repository
+- 🍴 **Forking** for your own projects
+- 📢 **Sharing** with others
+- 💖 **Contributing** to make it better
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Omega Open AI](https://github.com/Omega-Open-AI)**
+
+[🏠 Home](https://github.com/Omega-Open-AI) • [📧 Contact](mailto:contact@omega-openai.com) • [🐦 Twitter](https://twitter.com/omega_openai) • [💼 LinkedIn](https://linkedin.com/company/omega-openai)
+
+</div>
