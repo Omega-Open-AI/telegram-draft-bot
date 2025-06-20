@@ -1,1 +1,67 @@
+# ============================================================================
+# Telegram AI Image Generator Bot - Requirements
+# ============================================================================
+# This file contains all Python dependencies required to run the bot
+# Compatible with Python 3.8+ on all major platforms (Linux, Windows, macOS)
+# ============================================================================
 
+# Core HTTP client for API requests
+# Used for communicating with Hugging Face AI models
+httpx==0.25.2
+
+# Telegram Bot API wrapper
+# Provides high-level interface for Telegram Bot API
+python-telegram-bot==20.7
+
+# Image processing library
+# Used for image optimization and format conversion
+Pillow==10.1.0
+
+# Redis client for Python
+# Used for rate limiting, caching, and user preferences
+redis==5.0.1
+
+# Additional dependencies (automatically installed with above packages)
+# Listed here for transparency and version management
+
+# Async support for HTTP requests
+certifi>=2023.7.22        # SSL certificates
+h11>=0.14.0               # HTTP/1.1 protocol
+httpcore>=1.0.0           # Low-level HTTP client
+idna>=3.4                 # Internationalized domain names
+sniffio>=1.3.0            # Async library detection
+
+# Telegram bot framework dependencies
+APScheduler>=3.10.4       # Task scheduling
+pytz>=2023.3             # Timezone handling
+tornado>=6.3.3           # Web framework components
+
+# Development and testing (optional - uncomment if needed)
+# pytest>=7.4.0           # Testing framework
+# pytest-asyncio>=0.21.0  # Async testing support
+# black>=23.0.0           # Code formatter
+# flake8>=6.0.0           # Code linting
+
+# ============================================================================
+# Platform-specific installation notes:
+# ============================================================================
+# 
+# Linux (Ubuntu/Debian):
+#   sudo apt update && sudo apt install python3-pip python3-dev
+#   pip3 install -r requirements.txt
+#
+# Windows:
+#   pip install -r requirements.txt
+#
+# macOS:
+#   pip3 install -r requirements.txt
+#
+# Termux (Android):
+#   pkg install python python-pip
+#   pip install -r requirements.txt
+#
+# Docker:
+#   FROM python:3.11-slim
+#   COPY requirements.txt .
+#   RUN pip install --no-cache-dir -r requirements.txt
+# ============================================================================
